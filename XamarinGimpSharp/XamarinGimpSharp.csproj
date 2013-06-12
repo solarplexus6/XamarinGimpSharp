@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0837187-4FC4-40BE-8FC7-F79D151E52E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinGimpSharp</RootNamespace>
+    <AssemblyName>XamarinGimpSharp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AspectPreview.cs" />
+    <Compile Include="BaseRenderer.cs" />
+    <Compile Include="BoolMatrix.cs" />
+    <Compile Include="Brush.cs" />
+    <Compile Include="BrushInfo.cs" />
+    <Compile Include="BrushList.cs" />
+    <Compile Include="Buffer.cs" />
+    <Compile Include="ByColorSelectTool.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="ChannelList.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="CoordinateGenerator.cs" />
+    <Compile Include="CoordinateList.cs" />
+    <Compile Include="DataObject.cs" />
+    <Compile Include="DataObjectList.cs" />
+    <Compile Include="Dimensions.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="DoubleOffset.cs" />
+    <Compile Include="Drawable.cs" />
+    <Compile Include="DrawableComboBox.cs" />
+    <Compile Include="DrawableList.cs" />
+    <Compile Include="DrawablePreview.cs" />
+    <Compile Include="EllipseSelectTool.cs" />
+    <Compile Include="FileEntry.cs" />
+    <Compile Include="FilePlugin.cs" />
+    <Compile Include="FloatingSelection.cs" />
+    <Compile Include="FontHinting.cs" />
+    <Compile Include="FontSize.cs" />
+    <Compile Include="FreeSelectTool.cs" />
+    <Compile Include="FuzzySelectTool.cs" />
+    <Compile Include="Gimp.cs" />
+    <Compile Include="GimpBaseEnums.cs" />
+    <Compile Include="GimpCheckButton.cs" />
+    <Compile Include="GimpColorButton.cs" />
+    <Compile Include="GimpComboBox.cs" />
+    <Compile Include="GimpDialog.cs" />
+    <Compile Include="GimpDialogWithPreview.cs" />
+    <Compile Include="GimpEntry.cs" />
+    <Compile Include="GimpEnums.cs" />
+    <Compile Include="GimpFontSelectWidget.cs" />
+    <Compile Include="GimpFrame.cs" />
+    <Compile Include="GimpPreview.cs" />
+    <Compile Include="GimpRadioButton.cs" />
+    <Compile Include="GimpSharpException.cs" />
+    <Compile Include="GimpSpinButton.cs" />
+    <Compile Include="GimpStock.cs" />
+    <Compile Include="GimpTable.cs" />
+    <Compile Include="GimpTextView.cs" />
+    <Compile Include="GimpTypes.cs" />
+    <Compile Include="GimpUnit.cs" />
+    <Compile Include="Gradient.cs" />
+    <Compile Include="GradientList.cs" />
+    <Compile Include="GradientSegment.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="Guide.cs" />
+    <Compile Include="GuideCollection.cs" />
+    <Compile Include="HorizontalGuide.cs" />
+    <Compile Include="HSV.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="ImageComboBox.cs" />
+    <Compile Include="ImageList.cs" />
+    <Compile Include="IntComboBox.cs" />
+    <Compile Include="IntCoordinate.cs" />
+    <Compile Include="IntStore.cs" />
+    <Compile Include="IVariable.cs" />
+    <Compile Include="Layer.cs" />
+    <Compile Include="LayerList.cs" />
+    <Compile Include="Mask.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Offset.cs" />
+    <Compile Include="Palette.cs" />
+    <Compile Include="PaletteEntry.cs" />
+    <Compile Include="PaletteList.cs" />
+    <Compile Include="ParamDef.cs" />
+    <Compile Include="ParamDefList.cs" />
+    <Compile Include="Parasite.cs" />
+    <Compile Include="ParasiteList.cs" />
+    <Compile Include="Path.cs" />
+    <Compile Include="Pattern.cs" />
+    <Compile Include="PatternInfo.cs" />
+    <Compile Include="PatternList.cs" />
+    <Compile Include="PersistentStorage.cs" />
+    <Compile Include="Pixel.cs" />
+    <Compile Include="PixelFetcher.cs" />
+    <Compile Include="PixelRgn.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="PreviewArea.cs" />
+    <Compile Include="ProceduralDb.cs" />
+    <Compile Include="Procedure.cs" />
+    <Compile Include="ProcedureSet.cs" />
+    <Compile Include="Progress.cs" />
+    <Compile Include="PythonPlugin.cs" />
+    <Compile Include="RandomCoordinateGenerator.cs" />
+    <Compile Include="RandomSeed.cs" />
+    <Compile Include="ReadPixelIterator.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="RectangleSelectTool.cs" />
+    <Compile Include="RegionIterator.cs" />
+    <Compile Include="Resolution.cs" />
+    <Compile Include="RGB.cs" />
+    <Compile Include="RgnIterator.cs" />
+    <Compile Include="SaveAttribute.cs" />
+    <Compile Include="SaveAttributeSet.cs" />
+    <Compile Include="ScaleEntry.cs" />
+    <Compile Include="ScrolledPreview.cs" />
+    <Compile Include="Selection.cs" />
+    <Compile Include="Spacing.cs" />
+    <Compile Include="Stroke.cs" />
+    <Compile Include="Tattoo.cs" />
+    <Compile Include="TextLayer.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="VariableSet.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="Vector3.cs" />
+    <Compile Include="Vectors.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="VerticalGuide.cs" />
+    <Compile Include="XmlNodeListExtensions.cs" />
+    <Compile Include="ZoomPreview.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>
