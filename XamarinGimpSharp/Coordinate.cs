@@ -44,6 +44,10 @@ namespace Gimp
 
     public override bool Equals(object o)
     {
+        if (o == null)
+        {
+            return false;
+        }
       if (o is Coordinate<T>)
 	{
 	  var coordinate = o as Coordinate<T>;
@@ -60,6 +64,16 @@ namespace Gimp
     public static bool operator==(Coordinate<T> coordinate1, 
 				  Coordinate<T> coordinate2)
     {
+        // If both are null, or both are same instance, return true.
+        if (ReferenceEquals(coordinate1, coordinate2))
+        {
+            return true;
+        }
+        // If one is null, but not both, return false.
+        if (((object)coordinate1 == null) || ((object)coordinate2 == null))
+        {
+            return false;
+        }
       return coordinate1.Equals(coordinate2);
     }
 

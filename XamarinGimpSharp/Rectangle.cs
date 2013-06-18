@@ -25,25 +25,23 @@ namespace Gimp
 {
   public class Rectangle
   {
-    readonly Coordinate<int> _upperLeft = new Coordinate<int>();
-    readonly Coordinate<int> _lowerRight = new Coordinate<int>();
+      private readonly IntCoordinate _upperLeft;
+      private readonly IntCoordinate _lowerRight;
 
     public Rectangle(int x1, int y1, int x2, int y2)
     {
-      _upperLeft.X = x1;
-      _upperLeft.Y = y1;
-      _lowerRight.X = x2;
-      _lowerRight.Y = y2;
+      _upperLeft = new IntCoordinate(x1, y1);
+      _lowerRight = new IntCoordinate(x2, y2);
     }
 
-    public Rectangle(Coordinate<int> upperLeft, int width, int height)
+    public Rectangle(IntCoordinate upperLeft, int width, int height)
     {
       _upperLeft = upperLeft;
-      _lowerRight = new Coordinate<int>(upperLeft.X + width,
+      _lowerRight = new IntCoordinate(upperLeft.X + width,
 					upperLeft.Y + height);
     }
 
-    public Rectangle(Coordinate<int> upperLeft, Coordinate<int> lowerRight)
+    public Rectangle(IntCoordinate upperLeft, IntCoordinate lowerRight)
     {
       _upperLeft = upperLeft;
       _lowerRight = lowerRight;
@@ -69,12 +67,12 @@ namespace Gimp
       get {return _lowerRight.Y;}
     }
 
-    public Coordinate<int> UpperLeft
+    public IntCoordinate UpperLeft
     {
       get {return _upperLeft;}
     }
 
-    public Coordinate<int> LowerRight
+    public IntCoordinate LowerRight
     {
       get {return _lowerRight;}
     }
@@ -96,9 +94,13 @@ namespace Gimp
 
     public override bool Equals(object o)
     {
+      if (o == null)
+      {
+          return false;
+      }
       if (o is Rectangle)
 	{
-	  var rectangle = o as Rectangle;
+	  var rectangle = o as Rectangle;	    
 	  return rectangle.UpperLeft == UpperLeft &&
 	    rectangle.LowerRight == LowerRight;
 	}
@@ -111,7 +113,18 @@ namespace Gimp
     }
 
     public static bool operator==(Rectangle rectangle1, Rectangle rectangle2)
-    {
+    {        
+        // If both are null, or both are same instance, return true.
+        if (ReferenceEquals(rectangle1, rectangle2))
+        {
+            return true;
+        }        
+        // If one is null, but not both, return false.
+        if (((object)rectangle1 == null) || ((object)rectangle2 == null))
+        {
+            return false;
+        }
+        
       return rectangle1.Equals(rectangle2);
     }
 
